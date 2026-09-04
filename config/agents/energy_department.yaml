@@ -1,0 +1,833 @@
+# Energy Department
+# 각 섹터는 Lead / Bull / Bear 세 명으로 구성됩니다.
+# Bull 과 Bear 는 최초 분석 단계에서 서로의 결과를 볼 수 없습니다.
+# status: ACTIVE = 지금 일함 / REGISTERED = 정의만 되어 있음 (LLM 호출 없음)
+agents:
+- id: energy_lead
+  name: Energy Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: energy
+  status: ACTIVE
+  specialties:
+  - Energy
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: energy_bull
+  name: Energy Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: energy
+  status: ACTIVE
+  specialties:
+  - Energy
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: energy_bear
+  name: Energy Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: energy
+  status: ACTIVE
+  specialties:
+  - Energy
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: nuclear_lead
+  name: Nuclear Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: nuclear
+  status: REGISTERED
+  specialties:
+  - Nuclear
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: nuclear_bull
+  name: Nuclear Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: nuclear
+  status: REGISTERED
+  specialties:
+  - Nuclear
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: nuclear_bear
+  name: Nuclear Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: nuclear
+  status: REGISTERED
+  specialties:
+  - Nuclear
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: uranium_lead
+  name: Uranium Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: uranium
+  status: REGISTERED
+  specialties:
+  - Uranium
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: uranium_bull
+  name: Uranium Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: uranium
+  status: REGISTERED
+  specialties:
+  - Uranium
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: uranium_bear
+  name: Uranium Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: uranium
+  status: REGISTERED
+  specialties:
+  - Uranium
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: smr_lead
+  name: SMR Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: smr
+  status: REGISTERED
+  specialties:
+  - SMR
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: smr_bull
+  name: SMR Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: smr
+  status: REGISTERED
+  specialties:
+  - SMR
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: smr_bear
+  name: SMR Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: smr
+  status: REGISTERED
+  specialties:
+  - SMR
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: power_grid_lead
+  name: Power Grid Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: power_grid
+  status: REGISTERED
+  specialties:
+  - Power Grid
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: power_grid_bull
+  name: Power Grid Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: power_grid
+  status: REGISTERED
+  specialties:
+  - Power Grid
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: power_grid_bear
+  name: Power Grid Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: power_grid
+  status: REGISTERED
+  specialties:
+  - Power Grid
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: utilities_lead
+  name: Utilities Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: utilities
+  status: REGISTERED
+  specialties:
+  - Utilities
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: utilities_bull
+  name: Utilities Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: utilities
+  status: REGISTERED
+  specialties:
+  - Utilities
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: utilities_bear
+  name: Utilities Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: utilities
+  status: REGISTERED
+  specialties:
+  - Utilities
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: solar_lead
+  name: Solar Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: solar
+  status: REGISTERED
+  specialties:
+  - Solar
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: solar_bull
+  name: Solar Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: solar
+  status: REGISTERED
+  specialties:
+  - Solar
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: solar_bear
+  name: Solar Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: solar
+  status: REGISTERED
+  specialties:
+  - Solar
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: ess_lead
+  name: ESS Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: ess
+  status: REGISTERED
+  specialties:
+  - ESS
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: ess_bull
+  name: ESS Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: ess
+  status: REGISTERED
+  specialties:
+  - ESS
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: ess_bear
+  name: ESS Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: ess
+  status: REGISTERED
+  specialties:
+  - ESS
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: hydrogen_lead
+  name: Hydrogen Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: hydrogen
+  status: REGISTERED
+  specialties:
+  - Hydrogen
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: hydrogen_bull
+  name: Hydrogen Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: hydrogen
+  status: REGISTERED
+  specialties:
+  - Hydrogen
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: hydrogen_bear
+  name: Hydrogen Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: hydrogen
+  status: REGISTERED
+  specialties:
+  - Hydrogen
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: oil_lead
+  name: Oil Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: oil
+  status: REGISTERED
+  specialties:
+  - Oil
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: oil_bull
+  name: Oil Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: oil
+  status: REGISTERED
+  specialties:
+  - Oil
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: oil_bear
+  name: Oil Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: oil
+  status: REGISTERED
+  specialties:
+  - Oil
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: lng_lead
+  name: LNG Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: lng
+  status: REGISTERED
+  specialties:
+  - LNG
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: lng_bull
+  name: LNG Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: lng
+  status: REGISTERED
+  specialties:
+  - LNG
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: lng_bear
+  name: LNG Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: lng
+  status: REGISTERED
+  specialties:
+  - LNG
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15
+- id: energy_services_lead
+  name: Energy Services Lead
+  department: Energy Department
+  role: SECTOR_LEAD
+  sector: energy_services
+  status: REGISTERED
+  specialties:
+  - Energy Services
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.0
+- id: energy_services_bull
+  name: Energy Services Bull Researcher
+  department: Energy Department
+  role: BULL_RESEARCHER
+  sector: energy_services
+  status: REGISTERED
+  specialties:
+  - Energy Services
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: 0.15
+- id: energy_services_bear
+  name: Energy Services Bear Researcher
+  department: Energy Department
+  role: BEAR_RESEARCHER
+  sector: energy_services
+  status: REGISTERED
+  specialties:
+  - Energy Services
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Energy Department
+  role_prior: -0.15

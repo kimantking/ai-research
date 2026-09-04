@@ -1,0 +1,91 @@
+# =============================================================
+#  소스 신뢰 등급 — 코드에 하드코딩하지 않고 여기서 바꿉니다.
+# =============================================================
+#  핵심 원칙 (프로젝트 §24)
+#    낮은 등급 = 무조건 버림  이 아닙니다.
+#    Tier E(레딧/X) 소문도 '조사 시작점(DISCOVERY LEAD)'으로 씁니다.
+#    다만 확정 사실이 되려면 고품질 독립 출처 검증이 필요합니다.
+# =============================================================
+
+tiers:
+  S:
+    weight: 1.00
+    can_confirm_fact: true
+    description: 공식 규제기관/거래소/기업 공시
+    domains:
+      - sec.gov
+      - fda.gov
+      - clinicaltrials.gov
+      - federalreserve.gov
+      - treasury.gov
+      - usaspending.gov
+      - nasdaq.com
+      - nyse.com
+      - dart.fss.or.kr
+      - krx.co.kr
+      - twse.com.tw
+      - tpex.org.tw
+
+  A:
+    weight: 0.80
+    can_confirm_fact: true
+    description: 고품질 주요 언론 / 공식 IR / 어닝콜
+    domains:
+      - reuters.com
+      - bloomberg.com
+      - wsj.com
+      - ft.com
+      - apnews.com
+      - cnbc.com
+      - nikkei.com
+
+  B:
+    weight: 0.60
+    can_confirm_fact: true
+    description: 산업 전문매체 / 검증된 전문 리서치
+    domains:
+      - semianalysis.com
+      - tomshardware.com
+      - anandtech.com
+      - fiercebiotech.com
+      - endpts.com
+      - statnews.com
+      - theinformation.com
+
+  C:
+    weight: 0.40
+    can_confirm_fact: false
+    description: 애널리스트 코멘터리 / 전문가 인터뷰
+    domains:
+      - seekingalpha.com
+      - barrons.com
+
+  D:
+    weight: 0.20
+    can_confirm_fact: false
+    description: 블로그 / Substack / 커뮤니티
+    domains:
+      - substack.com
+      - medium.com
+
+  E:
+    weight: 0.05
+    can_confirm_fact: false
+    description: 레딧 / X / 익명 게시판
+    domains:
+      - reddit.com
+      - x.com
+      - twitter.com
+      - stocktwits.com
+
+# 확정 사실로 인정하는 조건
+confirmed_fact_requires:
+  min_independent_sources: 2      # ★ 페이지 수가 아니라 '독립 원문' 수
+  min_tier: B
+  contradiction_check: required
+
+# 낮은 등급도 이 용도로는 허용
+discovery_lead_allowed: [C, D, E]
+
+# 근사 중복 판정 기준 (SimHash 64비트 중 몇 비트까지 다르면 같은 문서로 볼지)
+near_duplicate_hamming_threshold: 8

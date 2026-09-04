@@ -1,0 +1,57 @@
+# =============================================================
+#  AI STOCK RESEARCH OFFICE  —  Docker Compose
+# =============================================================
+#  ★ 안전 설계
+#   - compose project name: ai-stock-research-office  (고유)
+#   - 컨테이너 이름 전부 airo- 접두사
+#   - 볼륨 이름 전부 airo_ 접두사
+#   - 포트는 흔한 번호(5432, 6379)를 피해서 5433 / 6380
+#   → 다른 프로젝트의 컨테이너/볼륨/포트와 절대 충돌하지 않습니다.
+# =============================================================
+name: ai-stock-research-office
+
+services:
+  postgres:
+    # pgvector 확장이 미리 들어있는 공식 이미지
+    image: pgvector/pgvector:pg16
+    container_name: airo-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-airo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airo_local_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-airo}
+    ports:
+      # 호스트 5433 → 컨테이너 5432
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - airo_pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-airo} -d ${POSTGRES_DB:-airo}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    # Valkey는 Redis 프로토콜 호환 + BSD-3-Clause 라이선스입니다.
+    # 라이선스 위험이 없어서 처음부터 이쪽을 씁니다. (docs/LICENSE_AUDIT.md D-014)
+    image: valkey/valkey:8-alpine
+    container_name: airo-redis
+    restart: unless-stopped
+    command: ["valkey-server", "--appendonly", "yes"]
+    ports:
+      # 호스트 6380 → 컨테이너 6379
+      - "${REDIS_PORT:-6380}:6379"
+    volumes:
+      - airo_redisdata:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  airo_pgdata:
+    name: airo_pgdata
+  airo_redisdata:
+    name: airo_redisdata

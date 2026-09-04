@@ -1,0 +1,70 @@
+# =============================================================
+#  모델 등급 → 실제 모델 매핑
+# =============================================================
+#  ★ 왜 이렇게 하는가 (프로젝트 §51 모델 독립성)
+#    에이전트 프로필(config/agents/*.yaml)에는 실제 모델명을 절대 쓰지 않습니다.
+#    "tier_strong" 같은 등급만 씁니다.
+#    실제 모델은 오직 이 파일 한 곳에서만 정합니다.
+#    → 나중에 Claude / OpenAI / Gemini / 로컬 모델로 통째로 바꿔도
+#      에이전트 177명의 설정을 하나도 안 건드려도 됩니다.
+# =============================================================
+
+# 현재 활성 공급자. 비워두면 MOCK 모드로 동작합니다 (LLM 호출 없음).
+active_provider: none      # none | anthropic | openai | google | local
+
+providers:
+  anthropic:
+    tier_strong: ""        # 예: 상위 모델 ID
+    tier_mid: ""
+    tier_cheap: ""
+  openai:
+    tier_strong: ""
+    tier_mid: ""
+    tier_cheap: ""
+  google:
+    tier_strong: ""
+    tier_mid: ""
+    tier_cheap: ""
+  local:
+    tier_strong: ""
+    tier_mid: ""
+    tier_cheap: ""
+
+# =============================================================
+#  작업별 라우팅 (§52)
+#  "고성능 모델을 모든 일에 쓰지 않는다"
+# =============================================================
+task_routing:
+  # --- LLM 을 아예 쓰지 않는 작업 (코드가 처리) ---
+  html_parsing:            code_only
+  content_extraction:      code_only
+  deduplication:           code_only     # 결정론적이어야 함
+  indicator_calculation:   code_only     # LLM 은 산수를 틀림
+  data_validation:         code_only
+  point_in_time_query:     code_only
+  chart_exercise_scoring:  code_only
+
+  # --- 싼 모델 ---
+  news_classification:     tier_cheap
+  entity_tagging:          tier_cheap
+  short_summary:           tier_cheap
+
+  # --- 중간 ---
+  document_summary:        tier_mid
+  sector_briefing:         tier_mid
+
+  # --- 비싼 모델 (여기가 실제로 가치 있는 지점) ---
+  thesis_synthesis:        tier_strong
+  bull_bear_debate:        tier_strong
+  contradiction_analysis:  tier_strong
+  failure_analysis:        tier_strong
+  final_report:            tier_strong
+
+# =============================================================
+#  비용 제어 (§54)
+# =============================================================
+budget:
+  daily_usd_limit: 5.0
+  # 한도를 넘으면 조용히 실패하지 않고, 작업을 큐에 남기고 멈춥니다.
+  on_exceed: pause_and_queue
+  warn_at_pct: 80

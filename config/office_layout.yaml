@@ -1,0 +1,228 @@
+# =============================================================
+#  픽셀 사무실 배치도
+# =============================================================
+#  좌표계: 타일 단위 (1타일 = 16px 기준, 프론트에서 확대)
+#  백엔드가 배치의 원본입니다. 프론트는 이걸 받아서 그립니다.
+#  → 부서를 추가하려면 여기만 고치면 됩니다.
+# =============================================================
+
+grid:
+  width: 64
+  height: 44
+  tile: 16
+
+rooms:
+  # ---- 상단: 리서치/데이터 ----
+  - id: Research Library
+    label: Research Library
+    x: 1
+    y: 1
+    w: 14
+    h: 10
+    color: "#2a3550"
+    icon: books
+
+  - id: Chart Lab
+    label: Chart Lab
+    x: 16
+    y: 1
+    w: 16
+    h: 10
+    color: "#1f3d3a"
+    icon: chart
+
+  - id: Data Center
+    label: Data Center
+    x: 33
+    y: 1
+    w: 14
+    h: 10
+    color: "#20304a"
+    icon: server
+
+  - id: Risk Room
+    label: Risk Room
+    x: 48
+    y: 1
+    w: 15
+    h: 10
+    color: "#4a2630"
+    icon: shield
+
+  # ---- 중단: 섹터 부서 ----
+  - id: Semiconductor Department
+    label: Semiconductor
+    x: 1
+    y: 13
+    w: 15
+    h: 10
+    color: "#26344d"
+    icon: chip
+
+  - id: AI / Software Department
+    label: AI / Software
+    x: 17
+    y: 13
+    w: 15
+    h: 10
+    color: "#243a4d"
+    icon: code
+
+  - id: Biotech Department
+    label: Biotech
+    x: 33
+    y: 13
+    w: 14
+    h: 10
+    color: "#1f4436"
+    icon: dna
+
+  - id: Healthcare Department
+    label: Healthcare
+    x: 48
+    y: 13
+    w: 15
+    h: 4
+    color: "#1f4436"
+    icon: cross
+
+  - id: Energy Department
+    label: Energy
+    x: 48
+    y: 18
+    w: 15
+    h: 5
+    color: "#4d3d1f"
+    icon: bolt
+
+  # ---- 하단 ----
+  - id: Auto / Battery Department
+    label: Auto / Battery
+    x: 1
+    y: 25
+    w: 13
+    h: 6
+    color: "#3d2f4d"
+    icon: car
+
+  - id: Defense / Space Department
+    label: Defense / Space
+    x: 15
+    y: 25
+    w: 13
+    h: 6
+    color: "#2b3a4d"
+    icon: rocket
+
+  - id: Finance / Crypto Department
+    label: Finance / Crypto
+    x: 29
+    y: 25
+    w: 13
+    h: 6
+    color: "#4d4222"
+    icon: coin
+
+  - id: Consumer / Industrial Department
+    label: Consumer / Industrial
+    x: 43
+    y: 25
+    w: 20
+    h: 6
+    color: "#333a4d"
+    icon: box
+
+  # ---- 실험실 ----
+  - id: Backtest Lab
+    label: Backtest Lab
+    x: 1
+    y: 33
+    w: 14
+    h: 4
+    color: "#20404d"
+    icon: flask
+
+  - id: Learning Room
+    label: Learning Room
+    x: 16
+    y: 33
+    w: 14
+    h: 4
+    color: "#3a2f4d"
+    icon: books
+
+  # ---- 최하단: 의사결정 ----
+  - id: Bull / Bear Debate Room
+    label: Bull / Bear Debate Room
+    x: 1
+    y: 39
+    w: 22
+    h: 4
+    color: "#4d2b2b"
+    icon: debate
+
+  - id: Investment Committee Room
+    label: Investment Committee
+    x: 24
+    y: 39
+    w: 20
+    h: 4
+    color: "#2f4d3f"
+    icon: table
+
+  - id: CIO Office
+    label: CIO Office
+    x: 45
+    y: 39
+    w: 18
+    h: 4
+    color: "#4d3a22"
+    icon: star
+
+  # 기본 대기 공간 (배치가 지정되지 않은 에이전트)
+  - id: Executive
+    label: Executive
+    x: 24
+    y: 39
+    w: 20
+    h: 4
+    color: "#2f4d3f"
+    icon: table
+
+  - id: Data Quality
+    label: Data Center
+    x: 33
+    y: 1
+    w: 14
+    h: 10
+    color: "#20304a"
+    icon: server
+
+  - id: office_floor
+    label: Office Floor
+    x: 1
+    y: 13
+    w: 15
+    h: 10
+    color: "#26344d"
+    icon: desk
+
+# 상태 → 이동할 장소 (§42)
+status_locations:
+  SEARCHING: Research Library
+  RESEARCHING: Research Library
+  READING: Research Library
+  VERIFYING: Data Center
+  CHARTING: Chart Lab
+  DEBATING: Bull / Bear Debate Room
+  BACKTESTING: Backtest Lab
+  EVALUATING: Risk Room
+  LEARNING: Learning Room
+  COMMITTEE: Investment Committee Room
+  CIO_REVIEW: CIO Office
+  IDLE: home
+  WAITING: home
+  BLOCKED: home
+  SLEEPING: home
+  ERROR: home
+  DONE: home

@@ -1,0 +1,571 @@
+# 섹터와 무관하게 공유되는 전문가들
+# 대부분 REGISTERED 상태이며, Router 가 필요할 때만 깨웁니다.
+agents:
+- id: cio
+  name: Chief Investment Officer
+  department: Executive
+  role: CIO
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 최종 판단
+  - 포트폴리오 관점
+  - 리스크 균형
+  skills:
+  - synthesis
+  - portfolio_view
+  - evidence_discipline
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: CIO Office
+  role_prior: 0.0
+- id: clo
+  name: Chief Learning Officer
+  department: Executive
+  role: CHIEF_LEARNING_OFFICER
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 학습 커리큘럼
+  - 시험 설계
+  - 오답 분석
+  skills:
+  - curriculum_design
+  - exam_design
+  - failure_analysis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Research Library
+  role_prior: 0.0
+- id: investment_committee
+  name: Investment Committee
+  department: Executive
+  role: INVESTMENT_COMMITTEE
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 가중 합의
+  - 에이전트 신뢰도 반영
+  skills:
+  - synthesis
+  - evidence_discipline
+  - trust_weighting
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Investment Committee Room
+  role_prior: 0.0
+- id: data_quality
+  name: Data Quality Agent
+  department: Data Quality
+  role: DATA_QUALITY
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 데이터 검증
+  - 이상치
+  - 시점 무결성
+  skills:
+  - schema_validation
+  - outlier_detection
+  - point_in_time_check
+  model_policy:
+    default: code_only
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Data Center
+  role_prior: 0.0
+- id: source_verification
+  name: Source Verification Expert
+  department: Data Quality
+  role: SOURCE_VERIFICATION
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 출처 검증
+  - 중복/신디케이션 탐지
+  - 티어 판정
+  skills:
+  - research_firewall
+  - source_lineage
+  - duplicate_detection
+  model_policy:
+    default: tier_cheap
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Data Center
+  role_prior: 0.0
+- id: evidence_judge
+  name: Evidence Judge
+  department: Data Quality
+  role: EVIDENCE_JUDGE
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 근거 없는 숫자 차단
+  - 주장→근거 추적
+  skills:
+  - evidence_gate
+  - claim_tracing
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Risk Room
+  role_prior: 0.0
+- id: red_team
+  name: Red Team
+  department: Data Quality
+  role: RED_TEAM
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 가정 공격
+  - 반대 근거 강제 탐색
+  skills:
+  - contradiction_search
+  - assumption_attack
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Risk Room
+  role_prior: 0.0
+- id: technical_master
+  name: Technical Master
+  department: Chart Lab
+  role: TECHNICAL_MASTER
+  sector: null
+  status: ACTIVE
+  specialties:
+  - 멀티 타임프레임
+  - 시장 구조
+  - 지표 종합
+  skills:
+  - common_chart_skill
+  - multi_timeframe
+  - market_structure
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: technical_bull
+  name: Technical Bull
+  department: Chart Lab
+  role: TECHNICAL_BULL
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 상승 시나리오 입증
+  skills:
+  - common_chart_skill
+  - breakout_analysis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.2
+- id: technical_bear
+  name: Technical Bear
+  department: Chart Lab
+  role: TECHNICAL_BEAR
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 하락/실패 시나리오 입증
+  skills:
+  - common_chart_skill
+  - failed_breakout_analysis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: -0.2
+- id: technical_judge
+  name: Technical Judge
+  department: Chart Lab
+  role: TECHNICAL_JUDGE
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 말투가 아닌 표본과 과거 유효성으로 판정
+  skills:
+  - historical_validity
+  - sample_size_check
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: price_action_expert
+  name: Price Action Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Price Action Expert
+  skills:
+  - common_chart_skill
+  - price_action
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: volume_expert
+  name: Volume Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Volume Expert
+  skills:
+  - common_chart_skill
+  - volume_profile
+  - rvol
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: momentum_expert
+  name: Momentum Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Momentum Expert
+  skills:
+  - common_chart_skill
+  - momentum
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: volatility_expert
+  name: Volatility Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Volatility Expert
+  skills:
+  - common_chart_skill
+  - volatility_regime
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: market_structure_expert
+  name: Market Structure Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Market Structure Expert
+  skills:
+  - common_chart_skill
+  - market_structure
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: pattern_expert
+  name: Pattern Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Pattern Expert
+  skills:
+  - common_chart_skill
+  - pattern_stats
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: relative_strength_expert
+  name: Relative Strength Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Relative Strength Expert
+  skills:
+  - common_chart_skill
+  - relative_strength
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: options_expert
+  name: Options Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Options Expert
+  skills:
+  - common_chart_skill
+  - options_flow
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: institutional_flow_expert
+  name: Institutional Flow Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Institutional Flow Expert
+  skills:
+  - common_chart_skill
+  - 13f_analysis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: short_interest_expert
+  name: Short Interest Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Short Interest Expert
+  skills:
+  - common_chart_skill
+  - short_interest
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: insider_transaction_expert
+  name: Insider Transaction Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Insider Transaction Expert
+  skills:
+  - common_chart_skill
+  - form4_analysis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: catalyst_expert
+  name: Catalyst Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - Catalyst Expert
+  skills:
+  - common_chart_skill
+  - catalyst_calendar
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: news_intelligence_expert
+  name: News Intelligence Expert
+  department: Chart Lab
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - News Intelligence Expert
+  skills:
+  - common_chart_skill
+  - news_triage
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: fundamental_master
+  name: Fundamental Master
+  department: Research Library
+  role: FUNDAMENTAL_MASTER
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 재무제표
+  - 단위경제성
+  skills:
+  - financial_statements
+  - unit_economics
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Research Library
+  role_prior: 0.0
+- id: valuation_master
+  name: Valuation Master
+  department: Research Library
+  role: VALUATION_MASTER
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 밸류에이션
+  skills:
+  - dcf
+  - multiples
+  - scenario_valuation
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Research Library
+  role_prior: 0.0
+- id: accounting_forensics
+  name: Accounting Forensics Expert
+  department: Research Library
+  role: SPECIALIST
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 회계 이상 탐지
+  skills:
+  - accounting_red_flags
+  - revenue_recognition
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Research Library
+  role_prior: 0.0
+- id: quant_master
+  name: Quant Master
+  department: Chart Lab
+  role: QUANT_MASTER
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 팩터
+  - 백테스트 설계
+  skills:
+  - factor_research
+  - backtest_design
+  - overfitting_guard
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Chart Lab
+  role_prior: 0.0
+- id: macro_expert
+  name: Macro Expert
+  department: Research Library
+  role: MACRO_EXPERT
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 금리
+  - 물가
+  - 유동성
+  skills:
+  - rates
+  - inflation
+  - liquidity
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Research Library
+  role_prior: 0.0
+- id: risk_expert
+  name: Risk Expert
+  department: Risk Room
+  role: RISK_EXPERT
+  sector: null
+  status: REGISTERED
+  specialties:
+  - 리스크 관리
+  skills:
+  - drawdown
+  - position_sizing
+  - tail_risk
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Risk Room
+  role_prior: 0.0

@@ -1,0 +1,365 @@
+# Semiconductor Department
+# 각 섹터는 Lead / Bull / Bear 세 명으로 구성됩니다.
+# Bull 과 Bear 는 최초 분석 단계에서 서로의 결과를 볼 수 없습니다.
+# status: ACTIVE = 지금 일함 / REGISTERED = 정의만 되어 있음 (LLM 호출 없음)
+agents:
+- id: semiconductor_lead
+  name: Semiconductor Lead
+  department: Semiconductor Department
+  role: SECTOR_LEAD
+  sector: semiconductor
+  status: ACTIVE
+  specialties:
+  - Semiconductor
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.0
+- id: semiconductor_bull
+  name: Semiconductor Bull Researcher
+  department: Semiconductor Department
+  role: BULL_RESEARCHER
+  sector: semiconductor
+  status: ACTIVE
+  specialties:
+  - Semiconductor
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.15
+- id: semiconductor_bear
+  name: Semiconductor Bear Researcher
+  department: Semiconductor Department
+  role: BEAR_RESEARCHER
+  sector: semiconductor
+  status: ACTIVE
+  specialties:
+  - Semiconductor
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: -0.15
+- id: ai_gpu_lead
+  name: AI / GPU Lead
+  department: Semiconductor Department
+  role: SECTOR_LEAD
+  sector: ai_gpu
+  status: REGISTERED
+  specialties:
+  - AI / GPU
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.0
+- id: ai_gpu_bull
+  name: AI / GPU Bull Researcher
+  department: Semiconductor Department
+  role: BULL_RESEARCHER
+  sector: ai_gpu
+  status: REGISTERED
+  specialties:
+  - AI / GPU
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.15
+- id: ai_gpu_bear
+  name: AI / GPU Bear Researcher
+  department: Semiconductor Department
+  role: BEAR_RESEARCHER
+  sector: ai_gpu
+  status: REGISTERED
+  specialties:
+  - AI / GPU
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: -0.15
+- id: hbm_memory_lead
+  name: HBM / Memory Lead
+  department: Semiconductor Department
+  role: SECTOR_LEAD
+  sector: hbm_memory
+  status: REGISTERED
+  specialties:
+  - HBM / Memory
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.0
+- id: hbm_memory_bull
+  name: HBM / Memory Bull Researcher
+  department: Semiconductor Department
+  role: BULL_RESEARCHER
+  sector: hbm_memory
+  status: REGISTERED
+  specialties:
+  - HBM / Memory
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.15
+- id: hbm_memory_bear
+  name: HBM / Memory Bear Researcher
+  department: Semiconductor Department
+  role: BEAR_RESEARCHER
+  sector: hbm_memory
+  status: REGISTERED
+  specialties:
+  - HBM / Memory
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: -0.15
+- id: semi_equipment_lead
+  name: Semiconductor Equipment Lead
+  department: Semiconductor Department
+  role: SECTOR_LEAD
+  sector: semi_equipment
+  status: REGISTERED
+  specialties:
+  - Semiconductor Equipment
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.0
+- id: semi_equipment_bull
+  name: Semiconductor Equipment Bull Researcher
+  department: Semiconductor Department
+  role: BULL_RESEARCHER
+  sector: semi_equipment
+  status: REGISTERED
+  specialties:
+  - Semiconductor Equipment
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.15
+- id: semi_equipment_bear
+  name: Semiconductor Equipment Bear Researcher
+  department: Semiconductor Department
+  role: BEAR_RESEARCHER
+  sector: semi_equipment
+  status: REGISTERED
+  specialties:
+  - Semiconductor Equipment
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: -0.15
+- id: semi_materials_lead
+  name: Semiconductor Materials Lead
+  department: Semiconductor Department
+  role: SECTOR_LEAD
+  sector: semi_materials
+  status: REGISTERED
+  specialties:
+  - Semiconductor Materials
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.0
+- id: semi_materials_bull
+  name: Semiconductor Materials Bull Researcher
+  department: Semiconductor Department
+  role: BULL_RESEARCHER
+  sector: semi_materials
+  status: REGISTERED
+  specialties:
+  - Semiconductor Materials
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: 0.15
+- id: semi_materials_bear
+  name: Semiconductor Materials Bear Researcher
+  department: Semiconductor Department
+  role: BEAR_RESEARCHER
+  sector: semi_materials
+  status: REGISTERED
+  specialties:
+  - Semiconductor Materials
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_semiconductor
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Semiconductor Department
+  role_prior: -0.15

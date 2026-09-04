@@ -1,0 +1,64 @@
+[project]
+name = "ai-stock-research-office"
+version = "0.1.0"
+description = "AI Research Organization for equity research — evidence-first, point-in-time safe."
+requires-python = ">=3.12,<3.13"
+
+# -------------------------------------------------------------------
+# Phase 4~7 최소 의존성만.
+# 금융 패키지(pandas-ta, edgartools, quantstats 등)는 해당 Phase에서 추가합니다.
+# 처음부터 전부 설치하지 않습니다. (프로젝트 원칙 §2)
+# -------------------------------------------------------------------
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+    "structlog>=24.4",
+    "httpx>=0.27",
+    "websockets>=13.0",
+]
+
+[project.optional-dependencies]
+# .\setup.ps1 -WithDev  로 설치
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.7",
+]
+
+# Phase 5에서 추가 (DB)
+db = [
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "alembic>=1.13",
+    "redis>=5.1",
+    "arq>=0.26",
+]
+
+# Phase 11~16에서 추가 (데이터/차트)
+data = [
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "pandas-ta-classic>=0.6",
+    "exchange-calendars>=4.6",
+    "mplfinance>=0.12",
+    "edgartools>=3.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

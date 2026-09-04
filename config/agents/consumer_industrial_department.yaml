@@ -1,0 +1,491 @@
+# Consumer / Industrial Department
+# 각 섹터는 Lead / Bull / Bear 세 명으로 구성됩니다.
+# Bull 과 Bear 는 최초 분석 단계에서 서로의 결과를 볼 수 없습니다.
+# status: ACTIVE = 지금 일함 / REGISTERED = 정의만 되어 있음 (LLM 호출 없음)
+agents:
+- id: consumer_lead
+  name: Consumer Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: consumer
+  status: REGISTERED
+  specialties:
+  - Consumer
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: consumer_bull
+  name: Consumer Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: consumer
+  status: REGISTERED
+  specialties:
+  - Consumer
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: consumer_bear
+  name: Consumer Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: consumer
+  status: REGISTERED
+  specialties:
+  - Consumer
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: retail_lead
+  name: Retail Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: retail
+  status: REGISTERED
+  specialties:
+  - Retail
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: retail_bull
+  name: Retail Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: retail
+  status: REGISTERED
+  specialties:
+  - Retail
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: retail_bear
+  name: Retail Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: retail
+  status: REGISTERED
+  specialties:
+  - Retail
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: industrial_lead
+  name: Industrial Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: industrial
+  status: REGISTERED
+  specialties:
+  - Industrial
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: industrial_bull
+  name: Industrial Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: industrial
+  status: REGISTERED
+  specialties:
+  - Industrial
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: industrial_bear
+  name: Industrial Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: industrial
+  status: REGISTERED
+  specialties:
+  - Industrial
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: infrastructure_lead
+  name: Infrastructure Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: infrastructure
+  status: REGISTERED
+  specialties:
+  - Infrastructure
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: infrastructure_bull
+  name: Infrastructure Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: infrastructure
+  status: REGISTERED
+  specialties:
+  - Infrastructure
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: infrastructure_bear
+  name: Infrastructure Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: infrastructure
+  status: REGISTERED
+  specialties:
+  - Infrastructure
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: materials_lead
+  name: Materials Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: materials
+  status: REGISTERED
+  specialties:
+  - Materials
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: materials_bull
+  name: Materials Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: materials
+  status: REGISTERED
+  specialties:
+  - Materials
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: materials_bear
+  name: Materials Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: materials
+  status: REGISTERED
+  specialties:
+  - Materials
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: reit_lead
+  name: REIT Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: reit
+  status: REGISTERED
+  specialties:
+  - REIT
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: reit_bull
+  name: REIT Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: reit
+  status: REGISTERED
+  specialties:
+  - REIT
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: reit_bear
+  name: REIT Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: reit
+  status: REGISTERED
+  specialties:
+  - REIT
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15
+- id: small_cap_lead
+  name: Small Cap / Special Situations Lead
+  department: Consumer / Industrial Department
+  role: SECTOR_LEAD
+  sector: small_cap
+  status: REGISTERED
+  specialties:
+  - Small Cap / Special Situations
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_smallcap
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.0
+- id: small_cap_bull
+  name: Small Cap / Special Situations Bull Researcher
+  department: Consumer / Industrial Department
+  role: BULL_RESEARCHER
+  sector: small_cap
+  status: REGISTERED
+  specialties:
+  - Small Cap / Special Situations
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_smallcap
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: 0.15
+- id: small_cap_bear
+  name: Small Cap / Special Situations Bear Researcher
+  department: Consumer / Industrial Department
+  role: BEAR_RESEARCHER
+  sector: small_cap
+  status: REGISTERED
+  specialties:
+  - Small Cap / Special Situations
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_smallcap
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Consumer / Industrial Department
+  role_prior: -0.15

@@ -1,0 +1,356 @@
+# Finance / Crypto Department
+# 각 섹터는 Lead / Bull / Bear 세 명으로 구성됩니다.
+# Bull 과 Bear 는 최초 분석 단계에서 서로의 결과를 볼 수 없습니다.
+# status: ACTIVE = 지금 일함 / REGISTERED = 정의만 되어 있음 (LLM 호출 없음)
+agents:
+- id: banking_lead
+  name: Banking Lead
+  department: Finance / Crypto Department
+  role: SECTOR_LEAD
+  sector: banking
+  status: REGISTERED
+  specialties:
+  - Banking
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.0
+- id: banking_bull
+  name: Banking Bull Researcher
+  department: Finance / Crypto Department
+  role: BULL_RESEARCHER
+  sector: banking
+  status: REGISTERED
+  specialties:
+  - Banking
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.15
+- id: banking_bear
+  name: Banking Bear Researcher
+  department: Finance / Crypto Department
+  role: BEAR_RESEARCHER
+  sector: banking
+  status: REGISTERED
+  specialties:
+  - Banking
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: -0.15
+- id: fintech_lead
+  name: Fintech Lead
+  department: Finance / Crypto Department
+  role: SECTOR_LEAD
+  sector: fintech
+  status: REGISTERED
+  specialties:
+  - Fintech
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.0
+- id: fintech_bull
+  name: Fintech Bull Researcher
+  department: Finance / Crypto Department
+  role: BULL_RESEARCHER
+  sector: fintech
+  status: REGISTERED
+  specialties:
+  - Fintech
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.15
+- id: fintech_bear
+  name: Fintech Bear Researcher
+  department: Finance / Crypto Department
+  role: BEAR_RESEARCHER
+  sector: fintech
+  status: REGISTERED
+  specialties:
+  - Fintech
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: -0.15
+- id: insurance_lead
+  name: Insurance Lead
+  department: Finance / Crypto Department
+  role: SECTOR_LEAD
+  sector: insurance
+  status: REGISTERED
+  specialties:
+  - Insurance
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.0
+- id: insurance_bull
+  name: Insurance Bull Researcher
+  department: Finance / Crypto Department
+  role: BULL_RESEARCHER
+  sector: insurance
+  status: REGISTERED
+  specialties:
+  - Insurance
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.15
+- id: insurance_bear
+  name: Insurance Bear Researcher
+  department: Finance / Crypto Department
+  role: BEAR_RESEARCHER
+  sector: insurance
+  status: REGISTERED
+  specialties:
+  - Insurance
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: -0.15
+- id: bitcoin_equity_lead
+  name: Bitcoin Related Equity Lead
+  department: Finance / Crypto Department
+  role: SECTOR_LEAD
+  sector: bitcoin_equity
+  status: REGISTERED
+  specialties:
+  - Bitcoin Related Equity
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.0
+- id: bitcoin_equity_bull
+  name: Bitcoin Related Equity Bull Researcher
+  department: Finance / Crypto Department
+  role: BULL_RESEARCHER
+  sector: bitcoin_equity
+  status: REGISTERED
+  specialties:
+  - Bitcoin Related Equity
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.15
+- id: bitcoin_equity_bear
+  name: Bitcoin Related Equity Bear Researcher
+  department: Finance / Crypto Department
+  role: BEAR_RESEARCHER
+  sector: bitcoin_equity
+  status: REGISTERED
+  specialties:
+  - Bitcoin Related Equity
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: -0.15
+- id: crypto_infra_lead
+  name: Crypto Infrastructure Lead
+  department: Finance / Crypto Department
+  role: SECTOR_LEAD
+  sector: crypto_infra
+  status: REGISTERED
+  specialties:
+  - Crypto Infrastructure
+  - sector rotation
+  - competitive landscape
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - fundamental_basic
+  - synthesis
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.0
+- id: crypto_infra_bull
+  name: Crypto Infrastructure Bull Researcher
+  department: Finance / Crypto Department
+  role: BULL_RESEARCHER
+  sector: crypto_infra
+  status: REGISTERED
+  specialties:
+  - Crypto Infrastructure
+  - growth drivers
+  - catalysts
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - contradiction_search
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: 0.15
+- id: crypto_infra_bear
+  name: Crypto Infrastructure Bear Researcher
+  department: Finance / Crypto Department
+  role: BEAR_RESEARCHER
+  sector: crypto_infra
+  status: REGISTERED
+  specialties:
+  - Crypto Infrastructure
+  - downside risks
+  - competition
+  - dilution risk
+  skills:
+  - common_chart_skill
+  - source_verification
+  - evidence_discipline
+  - sector_chart_bitcoin_equity
+  - contradiction_search
+  - accounting_red_flags
+  model_policy:
+    default: tier_strong
+    cheap_tasks: tier_cheap
+  research_depth: 10
+  learning_target_minutes: 240
+  home_location: Finance / Crypto Department
+  role_prior: -0.15

@@ -1,0 +1,77 @@
+﻿
+=============================================================
+  AI STOCK RESEARCH OFFICE  -  실행 방법
+=============================================================
+
+[1] 압축을 푼 위치 확인
+
+    C:\ai-research 폴더 안에 setup.bat 이 바로 보여야 합니다.
+
+    C:\ai-research\ai-research\... 처럼 두 겹이면 안 됩니다.
+    안쪽 폴더 내용을 밖으로 꺼내주세요.
+
+
+[2] 실행  -  이게 전부입니다
+
+    (1) setup.bat  더블클릭        <-- 준비 (처음 한 번만)
+    (2) start.bat  더블클릭        <-- 실행
+
+    브라우저가 자동으로 열립니다.
+    끌 때는 stop.bat 을 더블클릭하세요.
+
+
+[2-1] PowerShell 창에서 하고 싶다면
+
+    ***  .ps1 이 아니라 .bat 을 입력하세요  ***
+
+        cd C:\ai-research
+        .\setup.bat
+        .\start.bat
+
+    .\setup.ps1  <-- 이렇게 하면 "디지털 서명되지 않았습니다" 오류가 납니다.
+    .\setup.bat  <-- 이건 실행 정책의 적용을 받지 않아 그냥 됩니다.
+
+    setup.bat 이 .ps1 들의 차단을 풀어주므로,
+    그 다음부터는 .\start.ps1 도 정상 동작합니다.
+
+
+[3] PowerShell 에서 이런 오류가 났다면
+
+    .\setup.ps1 : ... 파일이 디지털 서명되지 않았습니다.
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+    -> 잘못하신 게 없습니다.
+       인터넷에서 받은 파일이라 Windows 가 막은 것뿐입니다.
+       위 [2] 처럼 .bat 을 더블클릭하시면 바로 해결됩니다.
+
+    PowerShell 로 하고 싶으시면 아래 한 줄을 붙여넣으세요.
+
+    powershell -NoProfile -ExecutionPolicy Bypass -File C:\ai-research\scripts\setup.ps1
+
+    한 번만 하면 그다음부터는 .\start.ps1 이 그냥 됩니다.
+
+
+[4] 꼭 필요한 것
+
+    Python 3.12   (3.11 이상이면 동작합니다)
+      https://www.python.org/downloads/release/python-3120/
+      설치할 때 "Add Python to PATH" 와 "py launcher" 를 꼭 체크하세요.
+
+    Node.js, Docker 는 없어도 됩니다.
+    "SETUP 완료 (일부 선택 기능 제외)" 라고 나와도 정상입니다.
+
+
+[5] 중요한 경고
+
+    지금 화면에 나오는 데이터는 전부 합성(가짜) 입니다.
+    수익률과 승률은 실제 시장과 아무 관계가 없습니다.
+    절대로 투자 판단에 사용하지 마세요.
+
+
+[6] 더 자세한 내용
+
+    README_FIRST.md          전체 안내
+    PROJECT_STATUS.md        현재 상태 / 아직 안 된 것
+    docs\TROUBLESHOOTING.md  오류 해결
+
+=============================================================
